@@ -1,12 +1,14 @@
 namespace OopPrinciples.Composition;
 
+public interface IWheel { void Rotate(); }
+
 /// <summary>
 /// Represents a wheel component of a car.
 /// </summary>
 /// <remarks>
 /// Called within <see cref="Car"/> to simulate wheel rotation during startup.
 /// </remarks>
-public class Wheel
+public class Wheel : IWheel
 {
     /// <summary>
     /// Rotates the wheel.
@@ -16,3 +18,4 @@ public class Wheel
         Console.WriteLine("Wheels rotating");
     }
 }
+
