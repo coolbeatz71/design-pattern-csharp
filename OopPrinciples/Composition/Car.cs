@@ -30,20 +30,20 @@ namespace OopPrinciples.Composition;
 /// </remarks>
 public class Car
 {
-    private Engine engine = new Engine();
-    private Wheel wheel = new Wheel();
-    private Chassis chassis = new Chassis();
-    private Seat seat = new Seat();
+    private readonly Engine _engine = new Engine();
+    private readonly Wheel _wheel = new Wheel();
+    private readonly Chassis _chassis = new Chassis();
+    private readonly Seat _seat = new Seat();
 
     /// <summary>
     /// Starts the car by delegating behavior to its internal components.
     /// </summary>
     public void Start()
     {
-        engine.Start();
-        wheel.Rotate();
-        chassis.Support();
-        seat.Bend();
+        _engine.Start();
+        _wheel.Rotate();
+        _chassis.Support();
+        _seat.Bend();
         Console.WriteLine("Car started");
     }
 }

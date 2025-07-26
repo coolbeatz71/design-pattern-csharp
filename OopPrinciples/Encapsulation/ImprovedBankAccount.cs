@@ -9,14 +9,14 @@ public class ImprovedBankAccount
     /// <summary>
     /// Gets the current account balance. Cannot be set externally.
     /// </summary>
-    public decimal Balance { get; private set; }
+    private decimal Balance { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="BankAccount"/> class with an optional initial balance.
     /// </summary>
     /// <param name="initialBalance">The starting balance, which must be non-negative.</param>
     /// <exception cref="ArgumentException">Thrown when the initial balance is negative.</exception>
-    public BankAccount(decimal initialBalance = 0)
+    public ImprovedBankAccount(decimal initialBalance = 0)
     {
         if (initialBalance < 0)
         {

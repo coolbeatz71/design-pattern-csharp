@@ -1,3 +1,6 @@
+using SolidPrinciples.SRP.GoodExample.Entities;
+using SolidPrinciples.SRP.GoodExample.Messaging;
+
 namespace SolidPrinciples.SRP.GoodExample.Services;
 
 /// <summary>

@@ -1,6 +1,4 @@
-namespace OopPrinciples.Composition;
-
-namespace OopPrinciples.Composition;
+namespace OopPrinciples.Composition.ImprovedExample;
 
 /// <summary>
 /// Represents a car composed of engine, wheels, chassis, and seat components.
@@ -25,11 +23,6 @@ namespace OopPrinciples.Composition;
 /// </example>
 public class Car(IEngine engine, IWheel wheel, IChassis chassis, ISeat seat)
 {
-    private readonly IEngine engine = engine;
-    private readonly IWheel wheel = wheel;
-    private readonly IChassis chassis = chassis;
-    private readonly ISeat seat = seat;
-
     /// <summary>
     /// Starts the car by delegating the start behavior to its composed components.
     /// </summary>
