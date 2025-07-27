@@ -1,4 +1,4 @@
-namespace OopPrinciples.Composition;
+namespace OopPrinciples.Composition.ImprovedExample;
 
 public interface IEngine { void Start(); }
 
