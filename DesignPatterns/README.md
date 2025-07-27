@@ -1,4 +1,4 @@
-# Object-Oriented Design Patterns in C#
+# Object-Oriented Design Patterns
 
 ## Overview
 
