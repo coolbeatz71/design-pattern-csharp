@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SolidPrinciples/DIP/GoodExample/Car.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolidPrinciples/DIP/GoodExample/Engine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SolidPrinciples/DIP/GoodExample/IEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SolidPrinciples/SolidPrinciples.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SolidPrinciples/SolidPrinciples.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +33,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feat-solid-dip" />
-                    <option name="lastUsedInstant" value="1753638474" />
+                    <option name="branchName" value="feat-design-patterns" />
+                    <option name="lastUsedInstant" value="1753649128" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1753638179" />
+                    <option name="lastUsedInstant" value="1753643921" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feat-solid-dip" />
+                    <option name="lastUsedInstant" value="1753638474" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feat-solid-isp" />
@@ -79,7 +81,7 @@
     <setting file="file://$PROJECT_DIR$/SolidPrinciples/LSP/GoodExample/Square.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -98,7 +100,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat-solid-dip&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-design-patterns&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -173,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753552870170</updated>
       <workItem from="1753552871878" duration="5748000" />
-      <workItem from="1753635077050" duration="2916000" />
+      <workItem from="1753635077050" duration="6987000" />
     </task>
     <servers />
   </component>
