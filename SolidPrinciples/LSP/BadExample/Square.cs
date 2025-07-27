@@ -7,7 +7,7 @@ namespace SolidPrinciples.LSP.BadExample;
 /// This class violates the Liskov Substitution Principle (LSP). Although a square
 /// "is a" rectangle in geometric terms, it cannot be substituted for a rectangle in code
 /// without breaking expectations. A rectangle allows width and height to vary independently,
-/// but a square enforces them to be equal, causing incorrect behavior when used polymorphically.
+/// but a square enforces them to be equal, causing incorrect behavior when used polymorphic-ally.
 ///
 /// <para><b>Violation Example:</b></para>
 /// <code>
