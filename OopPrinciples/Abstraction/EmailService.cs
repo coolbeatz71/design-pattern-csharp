@@ -27,7 +27,7 @@ public class EmailService
     /// </summary>
     private void Connect()
     {
-        System.Console.WriteLine("Connecting to email server...");
+        Console.WriteLine("Connecting to email server...");
     }
 
     /// <summary>
@@ -35,7 +35,7 @@ public class EmailService
     /// </summary>
     private void Authenticate()
     {
-        System.Console.WriteLine("Authenticating...");
+        Console.WriteLine("Authenticating...");
     }
 
     /// <summary>
@@ -46,7 +46,7 @@ public class EmailService
     /// <param name="body">The email body content.</param>
     private void SendEmail(string to, string subject, string body)
     {
-        System.Console.WriteLine($"Sending email to {to} with subject '{subject}' and body '{body}'.");
+        Console.WriteLine($"Sending email to {to} with subject '{subject}' and body '{body}'.");
     }
 
     /// <summary>
@@ -54,6 +54,6 @@ public class EmailService
     /// </summary>
     private void Disconnect()
     {
-        System.Console.WriteLine("Disconnecting from email server...");
+        Console.WriteLine("Disconnecting from email server...");
     }
 }
