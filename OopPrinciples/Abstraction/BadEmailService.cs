@@ -35,7 +35,7 @@ public class BadEmailService
     /// </summary>
     public void SendEmail()
     {
-        System.Console.WriteLine("Sending email...");
+        Console.WriteLine("Sending email...");
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class BadEmailService
     /// </summary>
     public void Connect()
     {
-        System.Console.WriteLine("Connecting to email server...");
+        Console.WriteLine("Connecting to email server...");
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class BadEmailService
     /// </summary>
     public void Authenticate()
     {
-        System.Console.WriteLine("Authenticating...");
+        Console.WriteLine("Authenticating...");
     }
 
     /// <summary>
@@ -59,6 +59,6 @@ public class BadEmailService
     /// </summary>
     public void Disconnect()
     {
-        System.Console.WriteLine("Disconnecting from email server...");
+        Console.WriteLine("Disconnecting from email server...");
     }
 }
