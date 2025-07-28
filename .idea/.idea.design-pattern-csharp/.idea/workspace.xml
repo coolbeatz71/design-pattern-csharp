@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +174,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753552870170</updated>
       <workItem from="1753552871878" duration="5748000" />
-      <workItem from="1753635077050" duration="10129000" />
+      <workItem from="1753635077050" duration="16721000" />
     </task>
     <servers />
   </component>
