@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Behavioral\" />
     <Folder Include="Creational\" />
     <Folder Include="Structural\" />
   </ItemGroup>
