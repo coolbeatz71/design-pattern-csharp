@@ -1,35 +1,35 @@
 namespace DesignPatterns.Behavioral.Memento.GoodExample;
 
 /// <summary>
-/// Represents a snapshot (Memento) of the <see cref="Editor"/> state.
-/// Used to store the internal state of the Editor without exposing implementation details.
+/// Represents a snapshot (memento) of an <see cref="Editor"/>'s state.
+/// Stores internal data like title and content without exposing the editor’s internal structure.
 /// </summary>
 public class EditorMemento
 {
     /// <summary>
-    /// Gets the title saved in this memento.
+    /// Gets the title stored in this memento.
     /// </summary>
     public string Title { get; }
 
     /// <summary>
-    /// Gets the content saved in this memento.
+    /// Gets the content stored in this memento.
     /// </summary>
     public string Content { get; }
 
     /// <summary>
-    /// Gets the timestamp indicating when the memento was created.
+    /// Gets the timestamp when the memento was created.
     /// </summary>
     public DateTime Timestamp { get; }
 
     /// <summary>
-    /// Gets a human-readable name of this memento.
-    /// Combines the timestamp and title for display purposes.
+    /// Gets a descriptive name for the memento, combining the title and timestamp.
+    /// Useful for display in history logs.
     /// </summary>
-    public string Name => $"{Timestamp} / ({Title})";
+    public string Name => $"({Title})-{Timestamp}";
 
     /// <summary>
     /// Initializes a new instance of the <see cref="EditorMemento"/> class.
-    /// This constructor is internal and only accessible by the <see cref="Editor"/>.
+    /// This constructor is internal and is intended to be used only by the <see cref="Editor"/>.
     /// </summary>
     /// <param name="title">The title to save.</param>
     /// <param name="content">The content to save.</param>

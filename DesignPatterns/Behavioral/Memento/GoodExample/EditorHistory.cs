@@ -1,15 +1,15 @@
 namespace DesignPatterns.Behavioral.Memento.GoodExample;
 
 /// <summary>
-/// Represents the Caretaker in the Memento pattern.
-/// Responsible for storing and restoring <see cref="Editor"/> states via mementos.
+/// Represents the Caretaker in the Memento design pattern.
+/// Maintains a history stack of <see cref="Editor"/> states through mementos and enables undo functionality.
 /// </summary>
 public class EditorHistory(Editor editor)
 {
-    private readonly Stack<EditorMemento> _statesList = [];
+    private readonly Stack<EditorMemento> _statesList = new();
 
     /// <summary>
-    /// Saves the current state of the associated editor to the history list.
+    /// Saves the current state of the associated <see cref="Editor"/> into the history.
     /// </summary>
     public void Save()
     {
@@ -18,12 +18,12 @@ public class EditorHistory(Editor editor)
     }
 
     /// <summary>
-    /// Restores the editor to its most recently saved state.
-    /// If no states are available, a message is printed.
+    /// Restores the editor to the most recently saved state.
+    /// Displays a message if no states are available to undo.
     /// </summary>
     public void Undo()
     {
-        if (_statesList.Count == 0)
+        if (_statesList.Count <= 0)
         {
             Console.WriteLine("No more states to undo");
             return;

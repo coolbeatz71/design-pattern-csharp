@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Memento/GoodExample/EditorHistory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Memento/GoodExample/EditorHistory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Memento/GoodExample/EditorMemento.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Memento/GoodExample/EditorMemento.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DesignPatterns/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design-pattern-csharp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-csharp.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +66,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7b3e2c1014db46fd9beb7d2259831f6f57800/99/2c013369/Stack`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/OopPrinciples/Composition/Car.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/OopPrinciples/Composition/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/OopPrinciples/Composition/ImprovedExample/Car.cs" root0="FORCE_HIGHLIGHTING" />
@@ -178,7 +180,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753552870170</updated>
       <workItem from="1753552871878" duration="5748000" />
-      <workItem from="1753635077050" duration="35762000" />
+      <workItem from="1753635077050" duration="37674000" />
     </task>
     <servers />
   </component>
