@@ -2074,9 +2074,9 @@ Many applications need to provide undo functionality or save/restore object stat
 - When direct access to an object's state would violate encapsulation
 
 **Real-world example:** A game's saving system that captures the complete game state at checkpoints, or a word processor that saves document states for undo operations while keeping the document's internal structure private.
-
+[Editor.cs](Behavioral/Memento/GoodExample/Editor.cs)
 ```csharp
-// Memento - stores the internal state
+// Memento - stores[Editor.cs](Behavioral/Memento/GoodExample/Editor.cs) the internal state
 public class DocumentMemento
 {
     public string Content { get; }
