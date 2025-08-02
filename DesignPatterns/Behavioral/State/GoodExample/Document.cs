@@ -28,7 +28,7 @@ public class Document
     /// <summary>
     /// Gets the current state type of the document.
     /// </summary>
-    private DocumentStateType CurrentStateType => _currentState.StateType;
+    public DocumentStateType CurrentStateType => _currentState.StateType;
     
     /// <summary>
     /// Sets the internal state of the document. This method is used by state implementations.
