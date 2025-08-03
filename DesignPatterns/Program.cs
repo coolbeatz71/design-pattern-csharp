@@ -1,4 +1,6 @@
-﻿using DesignPatterns.Behavioral.Memento.GoodExample;
+﻿using DesignPatterns.Behavioral.Iterator.GoodExample;
+using DesignPatterns.Behavioral.Iterator.GoodExample.Contracts;
+using DesignPatterns.Behavioral.Memento.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample.Enums;
 using DesignPatterns.Behavioral.State.GoodExample.Exceptions;
@@ -16,6 +18,7 @@ public static class Program
         RunMementoPatternDemo();
         RunStatePatternDemo();
         RunStrategyPatternDemo();
+        RunIteratorPatternDemo();
     }
 
     private static void RunMementoPatternDemo()
@@ -174,5 +177,49 @@ public static class Program
         videoStorage.SetCompressor(new WebMCompressor());
         videoStorage.SetOverlay(new BlackAndWhiteOverlay());
         videoStorage.Store("meeting_recording.webm");
+    }
+
+    private static void RunIteratorPatternDemo()
+    {
+        Console.WriteLine("--- ShoppingCart Iteration Demo ---");
+        
+        // Shopping Cart
+        var cart = new ShoppingCart();
+        cart.AddItem("Apple");
+        cart.AddItem("Banana");
+        cart.AddItem("Pineapple");
+        cart.AddItem("Mango");
+        cart.RemoveItem("Pineapple");
+        PrintItems(cart.CreateIterator());
+
+        // Product Shelf
+        var shelf = new ProductShelf(["Shampoo", "Soap", "Lotion"]);
+        PrintItems(shelf.CreateIterator());
+
+        // Product Catalog
+        var catalog = new ProductCatalog();
+        catalog.Add("A123", "MacBook Pro");
+        catalog.Add("B456", "Dell XPS 13");
+        PrintCatalog(catalog.CreateIterator());
+    }
+    
+    private static void PrintItems(IIterator<string> iterator)
+    {
+        while (iterator.HasNext())
+        {
+            Console.WriteLine(iterator.Current());
+            iterator.Next();
+        }
+        Console.WriteLine();
+    }
+
+    private static void PrintCatalog(IIterator<KeyValuePair<string, string>> iterator)
+    {
+        while (iterator.HasNext())
+        {
+            var entry = iterator.Current();
+            Console.WriteLine($"SKU: {entry.Key}, Name: {entry.Value}");
+            iterator.Next();
+        }
     }
 }

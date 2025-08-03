@@ -1,7 +1,3 @@
-Absolutely! Using the same clear and educational tone from that README, here's an equally polished explanation for the **Strategy Pattern**, inspired by the structure and clarity of the State Pattern explanation you shared:
-
----
-
 ## 🧠 Strategy Pattern – How It Works
 
 ### 🧩 **Purpose**
@@ -81,5 +77,3 @@ strategy.CalculateRoute(); // No conditionals, just polymorphism
 * When behaviors are **independent and reusable**, and you want to avoid duplicating logic.
 
 ---
-
-Let me know if you'd like this adapted into XML docs or used in a sample class for `ICompressionStrategy`, `ISortingStrategy`, or something specific you're building.

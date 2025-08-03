@@ -1,7 +1,3 @@
-Absolutely. Here's an explanation of the **Memento Pattern** that focuses on the **concept**, **purpose**, and **workflow**, without referencing your specific class example:
-
----
-
 ## 🧠 Memento Pattern – How It Works
 
 ### 🧩 **Purpose**
