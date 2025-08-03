@@ -2,6 +2,10 @@
 using DesignPatterns.Behavioral.State.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample.Enums;
 using DesignPatterns.Behavioral.State.GoodExample.Exceptions;
+using DesignPatterns.Behavioral.Strategy.GoodExample;
+using DesignPatterns.Behavioral.Strategy.GoodExample.Compressor;
+using DesignPatterns.Behavioral.Strategy.GoodExample.Contracts;
+using DesignPatterns.Behavioral.Strategy.GoodExample.Overlay;
 
 namespace DesignPatterns;
 
@@ -11,6 +15,7 @@ public static class Program
     {
         RunMementoPatternDemo();
         RunStatePatternDemo();
+        RunStrategyPatternDemo();
     }
 
     private static void RunMementoPatternDemo()
@@ -148,5 +153,26 @@ public static class Program
                 Console.WriteLine($"Error during '{description}': {ex.Message}");
             }
         }
+    }
+
+    private static void RunStrategyPatternDemo()
+    {
+        // Step 1: Choose your compressor and overlay strategies
+        ICompressor compressorStrategy = new Mp4Compressor();
+        IOverlay overlayStrategy = new BlurOverlay();
+
+        // Step 2: Inject strategies into the context
+        var videoStorage = new VideoStorage(compressorStrategy, overlayStrategy);
+
+        // Step 3: Store video
+        const string filePath = "holiday_trip.mp4";
+        videoStorage.Store(filePath);
+
+        // Optional: Change strategies at runtime
+        Console.WriteLine("\nSwitching strategies...\n");
+
+        videoStorage.SetCompressor(new WebMCompressor());
+        videoStorage.SetOverlay(new BlackAndWhiteOverlay());
+        videoStorage.Store("meeting_recording.webm");
     }
 }
