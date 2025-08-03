@@ -178,177 +178,44 @@ public static class Program
         videoStorage.SetOverlay(new BlackAndWhiteOverlay());
         videoStorage.Store("meeting_recording.webm");
     }
-    
-    public static void RunIteratorPatternDemo()
-    {
-        DemonstrateProductCatalogIteration();
-        DemonstrateProductShelfIteration();
-        DemonstrateShoppingCartIteration();
-        DemonstrateGenericIteration();
-    }
-    
-    private static void DemonstrateProductCatalogIteration()
-    {
-        Console.WriteLine("--- ProductCatalog Iteration Demo ---");
-        
-        // Create and populate a product catalog
-        var catalog = new ProductCatalog();
-        catalog.Add("MOUSE001", "Wireless Gaming Mouse");
-        catalog.Add("KEYB002", "Mechanical Keyboard RGB");
-        catalog.Add("MON003", "4K Ultra HD Monitor");
-        catalog.Add("HDST004", "Noise-Canceling Headset");
-        catalog.Add("WEBCAM005", "1080p HD Webcam");
 
-        Console.WriteLine("Products in catalog:");
-        
-        // Create iterator and traverse the catalog
-        var catalogIterator = catalog.CreateIterator();
-        var itemCount = 0;
-        
-        while (catalogIterator.HasNext())
-        {
-            var product = catalogIterator.Current();
-            itemCount++;
-            Console.WriteLine($"  {itemCount}. SKU: {product.Key} | Name: {product.Value}");
-            catalogIterator.Next();
-        }
-        
-        Console.WriteLine($"Total products in catalog: {itemCount}");
-    }
-    
-    private static void DemonstrateProductShelfIteration()
+    private static void RunIteratorPatternDemo()
     {
-        Console.WriteLine("--- ProductShelf Iteration Demo ---");
-        
-        // Create a product shelf with office supplies
-        string[] officeSupplies = {
-            "Stapler",
-            "Paper Clips",
-            "Sticky Notes",
-            "Highlighters",
-            "Notebooks",
-            "Pens & Pencils",
-            "Scissors",
-            "Tape Dispenser"
-        };
-        
-        var shelf = new ProductShelf(officeSupplies);
-        Console.WriteLine($"Office supplies shelf (contains {shelf.Count} items):");
-        
-        // Create iterator and traverse the shelf
-        var shelfIterator = shelf.CreateIterator();
-        var position = 1;
-        
-        while (shelfIterator.HasNext())
-        {
-            var product = shelfIterator.Current();
-            Console.WriteLine($"  Position {position}: {product}");
-            shelfIterator.Next();
-            position++;
-        }
-    }
-    
-    private static void DemonstrateShoppingCartIteration()
-    {
-        Console.WriteLine("--- ShoppingCart Iteration Demo ---");
-        
-        // Create and populate a shopping cart
+        // Shopping Cart
         var cart = new ShoppingCart();
-        cart.AddItem("Gaming Laptop");
-        cart.AddItem("Wireless Mouse");
-        cart.AddItem("Mechanical Keyboard");
-        cart.AddItem("USB-C Hub");
-        cart.AddItem("Laptop Stand");
-        cart.AddItem("Blue Light Glasses");
-        
-        Console.WriteLine($"Shopping cart contents ({cart.Count} items):");
-        
-        // Create iterator and traverse the cart
-        var cartIterator = cart.CreateIterator();
-        var itemNumber = 1;
-        
-        while (cartIterator.HasNext())
-        {
-            var item = cartIterator.Current();
-            Console.WriteLine($"  {itemNumber}. {item}");
-            cartIterator.Next();
-            itemNumber++;
-        }
-        
-        // Demonstrate cart operations
-        Console.WriteLine($"\nRemoving 'USB-C Hub' from cart...");
-        var removedItem = cart.RemoveItem("USB-C Hub");
-        if (removedItem != null)
-        {
-            Console.WriteLine($"Successfully removed: {removedItem}");
-        }
-        
-        Console.WriteLine($"Cart now contains {cart.Count} items.");
-        
-        // Check if cart contains specific item
-        Console.WriteLine($"Cart contains 'Gaming Laptop': {cart.Contains("Gaming Laptop")}");
-        Console.WriteLine($"Cart contains 'USB-C Hub': {cart.Contains("USB-C Hub")}");
-    }
+        cart.AddItem("Apple");
+        cart.AddItem("Banana");
+        cart.AddItem("Pineapple");
+        cart.RemoveItem("Pineapple");
+        PrintItems(cart.CreateIterator());
 
-    private static void DemonstrateGenericIteration()
-    {
-        Console.WriteLine("--- Generic Iteration Demo ---");
-        
-        // Create different types of collections
-        var techCatalog = new ProductCatalog();
-        techCatalog.Add("CPU001", "Intel Core i7 Processor");
-        techCatalog.Add("GPU002", "NVIDIA RTX 4080 Graphics Card");
-        techCatalog.Add("RAM003", "32GB DDR5 Memory");
-        
-        string[] snackItems = { "Chips", "Cookies", "Nuts", "Granola Bars" };
-        var snackShelf = new ProductShelf(snackItems);
-        
-        var groceryCart = new ShoppingCart();
-        groceryCart.AddItem("Milk");
-        groceryCart.AddItem("Bread");
-        groceryCart.AddItem("Eggs");
-        groceryCart.AddItem("Cheese");
-        
-        // Use generic methods to process different collection types
-        Console.WriteLine("Tech Products (using generic method):");
-        ProcessCatalogGeneric(techCatalog);
-        
-        Console.WriteLine("\nSnack Items (using generic method):");
-        ProcessShelfGeneric(snackShelf);
-        
-        Console.WriteLine("\nGrocery Cart (using generic method):");
-        ProcessCartGeneric(groceryCart);
+        // Product Shelf
+        var shelf = new ProductShelf(["Shampoo", "Soap", "Lotion"]);
+        PrintItems(shelf.CreateIterator());
+
+        // Product Catalog
+        var catalog = new ProductCatalog();
+        catalog.Add("A123", "MacBook Pro");
+        catalog.Add("B456", "Dell XPS 13");
+        PrintCatalog(catalog.CreateIterator());
     }
     
-    private static void ProcessShelfGeneric(ProductShelf shelf)
+    private static void PrintItems(IIterator<string> iterator)
     {
-        var iterator = shelf.CreateIterator();
         while (iterator.HasNext())
         {
-            var item = iterator.Current();
-            Console.WriteLine($"  → {item}");
+            Console.WriteLine(iterator.Current());
             iterator.Next();
         }
+        Console.WriteLine();
     }
 
-    private static void ProcessCatalogGeneric(ProductCatalog catalog)
+    private static void PrintCatalog(IIterator<KeyValuePair<string, string>> iterator)
     {
-        var iterator = catalog.CreateIterator();
         while (iterator.HasNext())
         {
-            var item = iterator.Current();
-            Console.WriteLine($"  → {item.Value} (SKU: {item.Key})");
-            iterator.Next();
-        }
-    }
-
-    private static void ProcessCartGeneric(ShoppingCart cart)
-    {
-        var iterator = cart.CreateIterator();
-        while (iterator.HasNext())
-        {
-            var item = iterator.Current();
-            Console.WriteLine($"  → {item}");
+            var entry = iterator.Current();
+            Console.WriteLine($"SKU: {entry.Key}, Name: {entry.Value}");
             iterator.Next();
         }
     }
