@@ -6,15 +6,17 @@ using DesignPatterns.Behavioral.State.GoodExample.States;
 namespace DesignPatterns.Behavioral.State.GoodExample;
 
 /// <summary>
-/// Context class in the State Pattern: Represents a document and manages its state transitions.
-/// The Context maintains a reference to the current state and delegates state-specific behavior to the state objects.
-/// This class provides a stable interface for clients while the internal state changes dynamically.
+/// Represents the context in the State design pattern, modeling a document whose behavior changes based on its internal state.
 /// 
-/// State Pattern Benefits Demonstrated:
-/// 1. Eliminates complex conditional statements for state-specific behavior
-/// 2. Makes state transitions explicit and controlled
-/// 3. Allows easy addition of new states without modifying existing code
-/// 4. Encapsulates state-specific logic within state classes
+/// This class delegates state-specific behavior to encapsulated state objects and exposes a stable interface to clients
+/// while managing transitions between states internally.
+/// <para><b>State Pattern Advantages Demonstrated:</b></para>
+/// <list type="bullet">
+///   <item>Replaces complex conditional logic with polymorphic state classes</item>
+///   <item>Enforces explicit, controlled state transitions</item>
+///   <item>Enables extensibility by adding new states without modifying the context</item>
+///   <item>Improves maintainability by isolating state-specific behavior</item>
+/// </list>
 /// </summary>
 public class Document
 {
