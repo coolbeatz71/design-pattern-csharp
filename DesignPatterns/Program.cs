@@ -12,103 +12,141 @@ public static class Program
         RunMementoPatternDemo();
         RunStatePatternDemo();
     }
-    
+
     private static void RunMementoPatternDemo()
     {
+        Console.WriteLine("=== Memento Pattern Demo ===\n");
+
         var editor = new Editor("Initial title", "Initial content");
         var history = new EditorHistory(editor);
 
-        history.Save();
-        editor.Show();
+        SaveAndShow(editor, history);
 
         editor.Edit("Updated title", "Updated content");
-        history.Save();
-        editor.Show();
+        SaveAndShow(editor, history);
 
         editor.Edit("Another updated title", "Another updated content");
-        history.Save();
-        editor.Show();
+        SaveAndShow(editor, history);
 
         editor.Edit("New updated title", "New updated content");
         editor.Show();
 
-        history.Undo();
-        editor.Show();
-
+        UndoAndShow(editor, history);
         history.ShowHistory();
+        UndoAndShow(editor, history);
 
+        Console.WriteLine("=== End Memento Demo ===\n");
+    }
+
+    private static void SaveAndShow(Editor editor, EditorHistory history)
+    {
+        history.Save();
+        editor.Show();
+    }
+
+    private static void UndoAndShow(Editor editor, EditorHistory history)
+    {
         history.Undo();
         editor.Show();
     }
 
     private static void RunStatePatternDemo()
     {
-        Console.WriteLine("=== Document State Pattern Demo ===\n");
+        Console.WriteLine("=== State Pattern Demo ===\n");
 
-        // Create dependencies
         var roleValidator = new RoleValidator();
-        var document = new Document(roleValidator);
 
-        // Show initial state
+        RunSuccessfulWorkflow(roleValidator);
+        RunRejectionWorkflow(roleValidator);
+        RunInvalidTransitions(roleValidator);
+
+        Console.WriteLine("\n=== End State Pattern Demo ===");
+    }
+
+    private static void RunSuccessfulWorkflow(RoleValidator roleValidator)
+    {
+        Console.WriteLine("--- Successful Workflow ---");
+
+        var document = new Document(roleValidator);
         Console.WriteLine($"Initial state: {document.CurrentStateType}");
 
-        // Complete workflow: Draft → Review → Published → Suspended → Published
-        Console.WriteLine("\n--- Complete Workflow ---");
-        
-        // Step 1: Editor submits for review (Draft → Review)
-        Console.WriteLine("1. Editor submits for review");
-        document.SubmitForReview(UserRoles.Editor);
-        Console.WriteLine($"   State: {document.CurrentStateType}");
+        var steps = new (string Description, Action Action)[]
+        {
+            ("Editor submits for review", () => document.SubmitForReview(UserRoles.Editor)),
+            ("Moderator publishes document", () => document.Publish(UserRoles.Moderator)),
+            ("Admin suspends document", () => document.Suspend(UserRoles.Admin)),
+            ("Super Admin republishes document", () => document.Republish(UserRoles.SuperAdmin))
+        };
 
-        // Step 2: Moderator publishes (Review → Published)
-        Console.WriteLine("2. Moderator publishes document");
-        document.Publish(UserRoles.Moderator);
-        Console.WriteLine($"   State: {document.CurrentStateType}");
+        ExecuteSteps(steps, document);
+    }
 
-        // Step 3: Admin suspends (Published → Suspended)
-        Console.WriteLine("3. Admin suspends document");
-        document.Suspend(UserRoles.Admin);
-        Console.WriteLine($"   State: {document.CurrentStateType}");
-
-        // Step 4: Admin republishes (Suspended → Published)
-        Console.WriteLine("4. Admin republishes document");
-        document.Republish(UserRoles.Admin);
-        Console.WriteLine($"   State: {document.CurrentStateType}");
-
-        // Show rejection workflow
+    private static void RunRejectionWorkflow(RoleValidator roleValidator)
+    {
         Console.WriteLine("\n--- Rejection Workflow ---");
-        var document2 = new Document(roleValidator);
-        
+
+        var document = new Document(roleValidator);
         Console.WriteLine("1. New document created: Draft");
-        document2.SubmitForReview(UserRoles.Editor);
-        Console.WriteLine("2. Editor submits: Review");
-        
-        document2.Reject(UserRoles.Moderator);
-        Console.WriteLine("3. Moderator rejects: Rejected (terminal state)");
 
-        // Show error handling
-        Console.WriteLine("\n--- Error Examples ---");
-        
-        try
+        var steps = new (string Description, Action Action)[]
         {
-            // Try invalid action
-            document.SubmitForReview(UserRoles.Editor); // Published can't go to Review
-        }
-        catch (InvalidStateTransitionException ex)
-        {
-            Console.WriteLine($"Invalid transition: {ex.Message}");
-        }
+            ("Editor submits for review", () => document.SubmitForReview(UserRoles.Editor)),
+            ("Moderator rejects document", () => document.Reject(UserRoles.Moderator))
+        };
 
-        try
-        {
-            // Try unauthorized action
-            document.Suspend(UserRoles.Editor); // Editor can't suspend
-        }
-        catch (UnauthorizedActionException ex)
-        {
-            Console.WriteLine($"Unauthorized: {ex.Message}");
-        }
+        ExecuteSteps(steps, document);
+    }
 
-        Console.WriteLine("\n=== Demo Complete ===");
+    private static void RunInvalidTransitions(RoleValidator roleValidator)
+    {
+        Console.WriteLine("\n--- Invalid Transitions ---");
+
+        var document = new Document(roleValidator);
+        document.SubmitForReview(UserRoles.Editor);
+        document.Publish(UserRoles.Moderator);
+
+        var errorSteps = new (string Description, Action Action)[]
+        {
+            ("Invalid: Published → Review", () => document.SubmitForReview(UserRoles.Editor)),
+            ("Unauthorized: Editor tries to suspend", () => document.Suspend(UserRoles.Editor))
+        };
+
+        foreach (var (description, action) in errorSteps)
+        {
+            Console.WriteLine($"\n{description}");
+            try
+            {
+                action();
+            }
+            catch (InvalidStateTransitionException ex)
+            {
+                Console.WriteLine($"Invalid transition: {ex.Message}");
+            }
+            catch (UnauthorizedActionException ex)
+            {
+                Console.WriteLine($"Unauthorized action: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+            }
+        }
+    }
+
+    private static void ExecuteSteps((string Description, Action Action)[] steps, Document document)
+    {
+        foreach (var (description, action) in steps)
+        {
+            Console.WriteLine($"\n{description}");
+            try
+            {
+                action();
+                Console.WriteLine($"Current state: {document.CurrentStateType}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error during '{description}': {ex.Message}");
+            }
+        }
     }
 }
