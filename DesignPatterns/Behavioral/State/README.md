@@ -73,4 +73,4 @@ state.Handle(); // Polymorphism replaces conditionals
 * When an object’s behavior depends heavily on its **current internal state**.
 * When you find yourself writing complex conditionals that check a `state` field.
 * When states have **distinct responsibilities**, and you want to separate them cleanly.
-* When you need **runtime flexibility** to switch behavior without changing the context's class.
+* When you need **runtime flexibility** to switch behavior without changing the context's class.~~

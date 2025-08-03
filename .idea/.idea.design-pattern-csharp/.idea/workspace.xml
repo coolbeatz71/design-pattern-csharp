@@ -10,17 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Compressor/MovCompressor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Compressor/Mp4Compressor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Compressor/WebMCompressor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Contracts/ICompressor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Contracts/IOverlay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Overlay/BlackAndWhiteOverlay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Overlay/BlurOverlay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Overlay/NoOverlay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/VideoStorage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/BadExample/VideoStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/BadExample/VideoStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPatterns/DesignPatterns.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/DesignPatterns.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +33,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feat-behavioral-strategy-pattern" />
-                    <option name="lastUsedInstant" value="1754218542" />
+                    <option name="branchName" value="feat-behavioral-iterator-pattern" />
+                    <option name="lastUsedInstant" value="1754226395" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1754218506" />
+                    <option name="lastUsedInstant" value="1754226186" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feat-behavioral-strategy-pattern" />
+                    <option name="lastUsedInstant" value="1754218542" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feat-behavioral-state-pattern" />
@@ -56,10 +51,6 @@
                   <RecentBranch>
                     <option name="branchName" value="feat-behavioral-memento-pattern" />
                     <option name="lastUsedInstant" value="1753893202" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="feat-design-patterns" />
-                    <option name="lastUsedInstant" value="1753649128" />
                   </RecentBranch>
                 </list>
               </option>
@@ -110,7 +101,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat-behavioral-strategy-pattern&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-behavioral-iterator-pattern&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
