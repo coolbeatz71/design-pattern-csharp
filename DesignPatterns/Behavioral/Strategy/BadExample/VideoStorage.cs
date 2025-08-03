@@ -23,7 +23,6 @@ namespace DesignPatterns.Behavioral.Strategy.BadExample;
 ///   </item>
 /// </list>
 /// </remarks>
-
 public class VideoStorage
 {
     private Compressor _compressor;

@@ -10,10 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Stategy/BadExample/Compressor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Stategy/BadExample/Overlay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Stategy/BadExample/VideoStorage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Compressor/MovCompressor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Compressor/Mp4Compressor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Compressor/WebMCompressor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Contracts/ICompressor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Contracts/IOverlay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Overlay/BlackAndWhiteOverlay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Overlay/BlurOverlay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/Overlay/NoOverlay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/GoodExample/VideoStorage.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/BadExample/VideoStorage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Strategy/BadExample/VideoStorage.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +106,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET Project.DesignPatterns.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.DesignPatterns.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
@@ -178,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1753552870170</updated>
       <workItem from="1753552871878" duration="5748000" />
-      <workItem from="1753635077050" duration="65800000" />
+      <workItem from="1753635077050" duration="70474000" />
     </task>
     <servers />
   </component>
