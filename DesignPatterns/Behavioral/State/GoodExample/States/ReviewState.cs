@@ -22,7 +22,7 @@ public class ReviewState(Document document, IRoleValidator roleValidator) : IPub
             throw new UnauthorizedActionException($"User with role '{userRole}' cannot reject documents.");
         }
 
-        document.SetState(new RejectedState());
+        document.SetState(new RejectedState(document, roleValidator));
     }
     
     /// <inheritdoc />

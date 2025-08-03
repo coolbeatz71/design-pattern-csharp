@@ -25,6 +25,6 @@ public class SuspendedState(Document document, IRoleValidator roleValidator): IR
             );
         }
 
-        document.SetState(new RepublishedState());
+        document.SetState(new RepublishedState(document, roleValidator));
     }
 }
