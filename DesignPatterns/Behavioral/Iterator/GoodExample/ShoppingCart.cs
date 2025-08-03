@@ -70,9 +70,6 @@ public class ShoppingCart : IAggregate<string>
     /// Removes the first occurrence of an item from the shopping cart.
     /// </summary>
     /// <param name="item">The item name to remove from the cart.</param>
-    /// <returns>
-    /// The removed item name if found and removed; otherwise, null.
-    /// </returns>
     /// <remarks>
     /// This method removes only the first occurrence of the specified item.
     /// If the same item appears multiple times in the cart, only one instance
@@ -97,12 +94,10 @@ public class ShoppingCart : IAggregate<string>
     /// }
     /// </code>
     /// </example>
-    public string? RemoveItem(string item)
+    public void RemoveItem(string item)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(item);
-        
-        var removed = _items.Remove(item);
-        return removed ? item : null;
+        _items.Remove(item);
     }
 
     /// <summary>
