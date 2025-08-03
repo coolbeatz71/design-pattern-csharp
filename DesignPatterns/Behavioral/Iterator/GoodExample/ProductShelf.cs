@@ -37,17 +37,7 @@ public class ProductShelf(string[] products) : IAggregate<string>
     /// while allowing iterator access to the elements.
     /// </remarks>
     private readonly string[] _products = products ?? throw new ArgumentNullException(nameof(products));
-
-    /// <summary>
-    /// Gets the number of products on the shelf.
-    /// </summary>
-    /// <value>The total count of products in the shelf.</value>
-    /// <remarks>
-    /// This property provides a way to check the shelf capacity
-    /// without exposing the underlying array.
-    /// </remarks>
-    public int Count => _products.Length;
-
+    
     /// <summary>
     /// Creates an iterator to traverse the products on the shelf.
     /// </summary>

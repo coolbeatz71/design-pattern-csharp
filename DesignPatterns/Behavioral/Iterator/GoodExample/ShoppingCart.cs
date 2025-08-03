@@ -38,16 +38,6 @@ public class ShoppingCart : IAggregate<string>
     /// for shopping cart operations like adding, removing, and iterating items.
     /// </remarks>
     private readonly List<string> _items = [];
-
-    /// <summary>
-    /// Gets the number of items currently in the shopping cart.
-    /// </summary>
-    /// <value>The total count of items in the cart.</value>
-    /// <remarks>
-    /// This property provides a quick way to check cart contents
-    /// without needing to iterate through all items.
-    /// </remarks>
-    public int Count => _items.Count;
     
     /// <summary>
     /// Adds an item to the shopping cart.
@@ -113,34 +103,6 @@ public class ShoppingCart : IAggregate<string>
         
         var removed = _items.Remove(item);
         return removed ? item : null;
-    }
-    
-    /// <summary>
-    /// Checks if the shopping cart contains a specific item.
-    /// </summary>
-    /// <param name="item">The item name to search for.</param>
-    /// <returns><c>true</c> if the item is found in the cart; otherwise, <c>false</c>.</returns>
-    /// <remarks>
-    /// This method performs a case-sensitive search for the exact item name.
-    /// </remarks>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="item"/> is null.
-    /// </exception>
-    /// <example>
-    /// <code>
-    /// var cart = new ShoppingCart();
-    /// cart.AddItem("Tablet");
-    /// 
-    /// if (cart.Contains("Tablet"))
-    /// {
-    ///     Console.WriteLine("Tablet is in the cart");
-    /// }
-    /// </code>
-    /// </example>
-    public bool Contains(string item)
-    {
-        ArgumentNullException.ThrowIfNull(item);
-        return _items.Contains(item);
     }
 
     /// <summary>

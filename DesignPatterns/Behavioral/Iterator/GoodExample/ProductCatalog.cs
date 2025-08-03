@@ -89,7 +89,7 @@ public class ProductCatalog : IAggregate<KeyValuePair<string, string>>
         /// <summary>
         /// Current position in the items list. Initially set to 0.
         /// </summary>
-        private int _index = 0;
+        private int _index;
         
         /// <summary>
         /// Snapshot of dictionary items taken at iterator creation time.

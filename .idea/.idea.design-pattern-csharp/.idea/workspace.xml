@@ -9,15 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/Contracts/IAggregate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/Contracts/IAggregate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/Contracts/IIterator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/Contracts/IIterator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/ProductCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/ProductCatalog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/ProductShelf.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/ProductShelf.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/ShoppingCart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Iterator/GoodExample/ShoppingCart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +94,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET Project.DesignPatterns.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Project.DesignPatterns.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,

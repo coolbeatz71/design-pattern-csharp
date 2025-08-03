@@ -181,11 +181,14 @@ public static class Program
 
     private static void RunIteratorPatternDemo()
     {
+        Console.WriteLine("--- ShoppingCart Iteration Demo ---");
+        
         // Shopping Cart
         var cart = new ShoppingCart();
         cart.AddItem("Apple");
         cart.AddItem("Banana");
         cart.AddItem("Pineapple");
+        cart.AddItem("Mango");
         cart.RemoveItem("Pineapple");
         PrintItems(cart.CreateIterator());
 
