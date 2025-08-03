@@ -48,17 +48,7 @@ public class ShoppingCart : IAggregate<string>
     /// without needing to iterate through all items.
     /// </remarks>
     public int Count => _items.Count;
-
-    /// <summary>
-    /// Gets a value indicating whether the shopping cart is empty.
-    /// </summary>
-    /// <value><c>true</c> if the cart contains no items; otherwise, <c>false</c>.</value>
-    /// <remarks>
-    /// Convenience property for checking if the cart has any items
-    /// before performing operations like checkout or iteration.
-    /// </remarks>
-    public bool IsEmpty => _items.Count == 0;
-
+    
     /// <summary>
     /// Adds an item to the shopping cart.
     /// </summary>
@@ -121,30 +111,10 @@ public class ShoppingCart : IAggregate<string>
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(item);
         
-        bool removed = _items.Remove(item);
+        var removed = _items.Remove(item);
         return removed ? item : null;
     }
-
-    /// <summary>
-    /// Removes all items from the shopping cart.
-    /// </summary>
-    /// <remarks>
-    /// This method clears the entire cart, making it empty.
-    /// Any active iterators may become invalid after calling this method.
-    /// </remarks>
-    /// <example>
-    /// <code>
-    /// var cart = new ShoppingCart();
-    /// cart.AddItem("Item 1");
-    /// cart.AddItem("Item 2");
-    /// cart.Clear(); // Cart is now empty
-    /// </code>
-    /// </example>
-    public void Clear()
-    {
-        _items.Clear();
-    }
-
+    
     /// <summary>
     /// Checks if the shopping cart contains a specific item.
     /// </summary>
