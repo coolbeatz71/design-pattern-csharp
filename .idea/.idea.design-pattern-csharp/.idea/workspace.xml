@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/BadExample/Light.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/BadExample/RemoteControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/GoodExample/DimCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/GoodExample/ICommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/GoodExample/Light.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/GoodExample/RemoteControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/GoodExample/TurnOffCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/RemoteControl/GoodExample/TurnOnCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
