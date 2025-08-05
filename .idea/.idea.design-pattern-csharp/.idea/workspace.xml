@@ -10,13 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/HTMLDocument.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/HistoryManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/ICommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/IUndoableCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/ItalicCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/UndoCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/HTMLDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/HTMLDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/HistoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/HistoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/ItalicCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Command/DocumentEditor/ItalicCommand.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
