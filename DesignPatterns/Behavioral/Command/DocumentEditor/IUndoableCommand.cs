@@ -1,6 +1,6 @@
 namespace DesignPatterns.Behavioral.Command.DocumentEditor;
 
-public class IUndoableCommand
+public interface IUndoableCommand: ICommand
 {
-    
+    void Undo();
 }
