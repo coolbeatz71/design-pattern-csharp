@@ -2,6 +2,7 @@ namespace DesignPatterns.Behavioral.Command.RemoteControl.GoodExample;
 
 /// <summary>
 /// Receiver class that knows how to perform actual operations (turn on/off/dim).
+/// It contains the implementation in details of the real actions/operations.
 /// </summary>
 /// <remarks>
 /// This class represents the actual business logic and remains decoupled from how the command is triggered.
