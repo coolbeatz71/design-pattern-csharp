@@ -58,4 +58,32 @@ public class HTMLDocument(string content)
     {
         Content = $"<i>{Content}</i>";
     }
+    
+    /// <summary>
+    /// Wraps the current document content with bold HTML tags.
+    /// This method implements the business logic for bold formatting
+    /// and is called by the BoldCommand during execution.
+    /// </summary>
+    /// <remarks>
+    /// <list type="bullet">
+    /// <item>Directly modifies the Content property</item>
+    /// <item>Wraps existing content with HTML bold tags</item>
+    /// <item>Commands should save previous state before calling this method</item>
+    /// <item>Required for undo functionality</item>
+    /// </list>
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var document = new HTMLDocument("Hello");
+    /// document.MakeBold();
+    /// Console.WriteLine(document.Content); // Output: &lt;b&gt;Hello&lt;/b&gt;
+    /// 
+    /// document.MakeBold(); // Can be called multiple times
+    /// Console.WriteLine(document.Content); // Output: &lt;b&gt;&lt;b&gt;Hello&lt;/b&gt;&lt;/b&gt;
+    /// </code>
+    /// </example>
+    public void MakeBold()
+    {
+        Content = $"<b>{Content}</b>";
+    }
 }
