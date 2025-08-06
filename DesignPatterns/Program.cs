@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Behavioral.Iterator.GoodExample;
+﻿using DesignPatterns.Behavioral.Command.TextEditor;
+using DesignPatterns.Behavioral.Iterator.GoodExample;
 using DesignPatterns.Behavioral.Iterator.GoodExample.Contracts;
 using DesignPatterns.Behavioral.Memento.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample;
@@ -19,6 +20,7 @@ public static class Program
         RunStatePatternDemo();
         RunStrategyPatternDemo();
         RunIteratorPatternDemo();
+        RunCommandPatternDemo();
     }
 
     private static void RunMementoPatternDemo()
@@ -220,6 +222,90 @@ public static class Program
             var entry = iterator.Current();
             Console.WriteLine($"SKU: {entry.Key}, Name: {entry.Value}");
             iterator.Next();
+        }
+    }
+
+    private static void RunCommandPatternDemo()
+    {
+        BasicCommandUsage();
+        AdvancedCommandUsage();
+    }
+    
+    public static void BasicCommandUsage()
+    {
+        Console.WriteLine("=== Command Pattern Text Editor Example ===\n");
+
+        var textEditor = new TextEditor();
+        var editorControl = new EditorControl();
+
+        Console.WriteLine("Initial content: '" + textEditor.GetContent() + "'\n");
+
+        // Create and execute commands
+        var insertHello = new InsertTextCommand(textEditor, "Hello", 0);
+        var insertWorld = new InsertTextCommand(textEditor, " World", 5);
+        var insertExclamation = new InsertTextCommand(textEditor, "!", 11);
+
+        Console.WriteLine("Executing insert commands...");
+        editorControl.ExecuteCommand(insertHello);
+        editorControl.ExecuteCommand(insertWorld);
+        editorControl.ExecuteCommand(insertExclamation);
+        
+        Console.WriteLine($"Content after inserts: '{textEditor.GetContent()}'\n");
+
+        // Demonstrate delete command
+        var deleteCommand = new DeleteTextCommand(textEditor, 5, 6); // Delete " World"
+        Console.WriteLine("Executing delete command...");
+        editorControl.ExecuteCommand(deleteCommand);
+        Console.WriteLine($"Content after delete: '{textEditor.GetContent()}'\n");
+
+        // Demonstrate undo functionality
+        Console.WriteLine("Performing undo operations...");
+        editorControl.Undo(); // Undo delete
+        Console.WriteLine($"After first undo: '{textEditor.GetContent()}'");
+        
+        editorControl.Undo(); // Undo insert "!"
+        Console.WriteLine($"After second undo: '{textEditor.GetContent()}'");
+
+        // Demonstrate redo functionality
+        Console.WriteLine("\nPerforming redo operations...");
+        editorControl.Redo(); // Redo insert "!"
+        Console.WriteLine($"After first redo: '{textEditor.GetContent()}'");
+        
+        editorControl.Redo(); // Redo delete " World"
+        Console.WriteLine($"After second redo: '{textEditor.GetContent()}'");
+    }
+    
+    public static void AdvancedCommandUsage()
+    {
+        Console.WriteLine("\n=== Advanced Command Pattern Usage ===\n");
+
+        var textEditor = new TextEditor();
+        var editorControl = new EditorControl();
+
+        // Create a list of commands to simulate a macro
+        var macroCommands = new List<ICommand>
+        {
+            new InsertTextCommand(textEditor, "The ", 0),
+            new InsertTextCommand(textEditor, "Command ", 4),
+            new InsertTextCommand(textEditor, "Pattern ", 12),
+            new InsertTextCommand(textEditor, "is ", 20),
+            new InsertTextCommand(textEditor, "powerful!", 23)
+        };
+
+        Console.WriteLine("Executing macro (multiple commands)...");
+        foreach (var command in macroCommands)
+        {
+            editorControl.ExecuteCommand(command);
+        }
+        
+        Console.WriteLine($"Content after macro: '{textEditor.GetContent()}'\n");
+
+        // Demonstrate that each command can be undone individually
+        Console.WriteLine("Undoing commands one by one...");
+        for (var i = 0; i < 3; i++)
+        {
+            editorControl.Undo();
+            Console.WriteLine($"After undo {i + 1}: '{textEditor.GetContent()}'");
         }
     }
 }
