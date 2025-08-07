@@ -10,7 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/TemplateMethod/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/TemplateMethod/BadExample/Coffee.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/TemplateMethod/BadExample/Tea.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
