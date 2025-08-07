@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Behavioral\TemplateMethod\GoodExample\PolymorphismSolution\" />
     <Folder Include="Creational\" />
     <Folder Include="Structural\" />
   </ItemGroup>
