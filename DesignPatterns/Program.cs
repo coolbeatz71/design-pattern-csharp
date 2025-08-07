@@ -9,6 +9,15 @@ using DesignPatterns.Behavioral.Strategy.GoodExample;
 using DesignPatterns.Behavioral.Strategy.GoodExample.Compressor;
 using DesignPatterns.Behavioral.Strategy.GoodExample.Contracts;
 using DesignPatterns.Behavioral.Strategy.GoodExample.Overlay;
+using DesignPatterns.Behavioral.TemplateMethod.GoodExample.InheritanceSolution;
+using DesignPatterns.Behavioral.TemplateMethod.GoodExample.PolymorphismSolution;
+using DesignPatterns.Behavioral.TemplateMethod.GoodExample.PolymorphismSolution.Contracts;
+
+using CoffeeIn = DesignPatterns.Behavioral.TemplateMethod.GoodExample.InheritanceSolution.Coffee;
+using TeaIn = DesignPatterns.Behavioral.TemplateMethod.GoodExample.InheritanceSolution.Tea;
+
+using CoffeePoly = DesignPatterns.Behavioral.TemplateMethod.GoodExample.PolymorphismSolution.Coffee;
+using TeaPoly = DesignPatterns.Behavioral.TemplateMethod.GoodExample.PolymorphismSolution.Tea;
 
 namespace DesignPatterns;
 
@@ -21,6 +30,7 @@ public static class Program
         RunStrategyPatternDemo();
         RunIteratorPatternDemo();
         RunCommandPatternDemo();
+        RunTemplateMethodPatternDemo();
     }
 
     private static void RunMementoPatternDemo()
@@ -307,5 +317,56 @@ public static class Program
             editorControl.Undo();
             Console.WriteLine($"After undo {i + 1}: '{textEditor.GetContent()}'");
         }
+    }
+
+    private static void RunTemplateMethodPatternDemo()
+    {
+        TemplateMethodInheritance();
+        TemplateMethodPolymorphism();
+    }
+
+    private static void TemplateMethodInheritance()
+    {
+        Console.WriteLine("=== Making Coffee ===");
+        Beverage coffee = new CoffeeIn();
+        coffee.MakeBeverage();
+        
+        Console.WriteLine("\n=== Making Tea ===");
+        Beverage tea = new TeaIn();
+        tea.MakeBeverage();
+        
+        Console.WriteLine("\nBoth beverages follow the same preparation algorithm!");
+    }
+
+    private static void TemplateMethodPolymorphism()
+    {
+        // Array of different beverage strategies
+        IBeverage[] strategies = 
+        {
+            new CoffeePoly(),
+            new TeaPoly(),
+            new HotChocolate()
+        };
+        
+        Console.WriteLine("=== Polymorphic Beverage Preparation ===");
+        
+        // Process each beverage using the same template method
+        foreach (var strategy in strategies)
+        {
+            Console.WriteLine($"\n=== Making {strategy.GetType().Name.Replace("Strategy", "")} ===");
+            var beverageMaker = new BeverageMaker(strategy);
+            beverageMaker.Prepare();
+        }
+        
+        Console.WriteLine("\n=== Runtime Strategy Switching Demo ===");
+        var maker = new BeverageMaker(new CoffeePoly());
+        maker.Prepare();
+        
+        // In a real application, you could switch strategies dynamically
+        Console.WriteLine("\nSwitching to tea strategy...");
+        maker = new BeverageMaker(new TeaPoly());
+        maker.Prepare();
+        
+        Console.WriteLine("\nAll beverages use the same preparation template with different strategies!");
     }
 }
