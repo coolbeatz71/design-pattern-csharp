@@ -1,6 +1,6 @@
-using DesignPatterns.Behavioral.Observer.GoodExample.Contracts;
+using DesignPatterns.Behavioral.Observer.GoodExample.PushStyle.Contracts;
 
-namespace DesignPatterns.Behavioral.Observer.GoodExample;
+namespace DesignPatterns.Behavioral.Observer.GoodExample.PushStyle;
 
 /// <summary>
 /// A concrete subject that holds a list of integer values.
@@ -28,11 +28,6 @@ public class DataSource: ISubject
 {
     private List<int> _values = [];
     private readonly List<IObserver> _observers = [];
-    
-    /// <summary>
-    /// Gets the current list of integer values.
-    /// </summary>
-    public List<int> GetValues => [.._values];
     
     /// <summary>
     /// Sets new values and notifies all observers of this change.

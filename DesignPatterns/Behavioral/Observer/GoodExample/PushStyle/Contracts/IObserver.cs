@@ -1,4 +1,4 @@
-namespace DesignPatterns.Behavioral.Observer.GoodExample.Contracts;
+namespace DesignPatterns.Behavioral.Observer.GoodExample.PushStyle.Contracts;
 
 /// <summary>
 /// Defines the contract for all observers in the Observer Pattern.

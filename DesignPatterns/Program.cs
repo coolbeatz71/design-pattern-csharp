@@ -2,7 +2,7 @@
 using DesignPatterns.Behavioral.Iterator.GoodExample;
 using DesignPatterns.Behavioral.Iterator.GoodExample.Contracts;
 using DesignPatterns.Behavioral.Memento.GoodExample;
-using DesignPatterns.Behavioral.Observer.GoodExample;
+using DesignPatterns.Behavioral.Observer.GoodExample.PushStyle;
 using DesignPatterns.Behavioral.State.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample.Enums;
 using DesignPatterns.Behavioral.State.GoodExample.Exceptions;
