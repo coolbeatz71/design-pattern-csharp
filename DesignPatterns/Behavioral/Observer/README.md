@@ -1,5 +1,3 @@
----
-
 ## 👀 Observer Pattern – How It Works
 
 ### 🧩 **Purpose**
