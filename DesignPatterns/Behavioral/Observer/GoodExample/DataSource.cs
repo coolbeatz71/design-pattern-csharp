@@ -32,7 +32,7 @@ public class DataSource: ISubject
     /// <summary>
     /// Gets the current list of integer values.
     /// </summary>
-    public List<int> GetValues => [.._values];
+    private List<int> GetValues() => [.._values];
     
     /// <summary>
     /// Sets new values and notifies all observers of this change.
@@ -88,10 +88,11 @@ public class DataSource: ISubject
     /// </remarks>
     public void NotifyObservers()
     {
+        var values = GetValues();
         Console.WriteLine($"Notifying {_observers.Count} observer(s)...");
         foreach (var observer in _observers)
         {
-            observer.Update(_values);
+            observer.Update(values);
         }
     }
 }
