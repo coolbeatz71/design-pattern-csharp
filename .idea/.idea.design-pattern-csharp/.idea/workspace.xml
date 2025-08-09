@@ -10,7 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b59d5ed0-3c24-40de-88f8-e255421a931e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/DesignPatterns/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DesignPatterns/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Observer/GoodExample/BarChart.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Observer/GoodExample/Contracts/IObserver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Observer/GoodExample/Contracts/ISubject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Observer/GoodExample/DataSource.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DesignPatterns/Behavioral/Observer/GoodExample/Sheet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.design-pattern-csharp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +37,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feat-behavioral-template-method-pattern" />
-                    <option name="lastUsedInstant" value="1754505326" />
+                    <option name="branchName" value="feat-behavioral-observer-pattern" />
+                    <option name="lastUsedInstant" value="1754757024" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1754497943" />
+                    <option name="lastUsedInstant" value="1754604862" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feat-behavioral-template-method-pattern" />
+                    <option name="lastUsedInstant" value="1754505326" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feat-behavioral-command-pattern" />
@@ -46,10 +55,6 @@
                   <RecentBranch>
                     <option name="branchName" value="feat-behavioral-iterator-pattern" />
                     <option name="lastUsedInstant" value="1754253590" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="feat-behavioral-strategy-pattern" />
-                    <option name="lastUsedInstant" value="1754218542" />
                   </RecentBranch>
                 </list>
               </option>
@@ -100,7 +105,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat-behavioral-template-method-pattern&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat-behavioral-observer-pattern&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
