@@ -1,6 +1,6 @@
-using DesignPatterns.Behavioral.Observer.GoodExample.Contracts;
+using DesignPatterns.Behavioral.Observer.GoodExample.PushStyle.Contracts;
 
-namespace DesignPatterns.Behavioral.Observer.GoodExample;
+namespace DesignPatterns.Behavioral.Observer.GoodExample.PushStyle;
 
 /// <summary>
 /// An observer that calculates the total sum of the integer values.
