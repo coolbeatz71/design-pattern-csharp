@@ -63,6 +63,17 @@ public class DataSource: ISubject
     }
     
     /// <summary>
+    /// Updates the list of values and notifies all registered observers to pull new data.
+    /// </summary>
+    /// <param name="values">The new list of integer values.</param>
+    public void SetValues(List<int> values)
+    {
+        _values = new List<int>(values);
+        Console.WriteLine($"[PULL] DataSource updated with {values.Count} values");
+        NotifyObservers();
+    }
+    
+    /// <summary>
     /// Retrieves the current list of values stored in the data source.
     /// </summary>
     /// <returns>A copy of the current values list.</returns>
