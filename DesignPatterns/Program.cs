@@ -2,6 +2,7 @@
 using DesignPatterns.Behavioral.Iterator.GoodExample;
 using DesignPatterns.Behavioral.Iterator.GoodExample.Contracts;
 using DesignPatterns.Behavioral.Memento.GoodExample;
+using DesignPatterns.Behavioral.Observer.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample;
 using DesignPatterns.Behavioral.State.GoodExample.Enums;
 using DesignPatterns.Behavioral.State.GoodExample.Exceptions;
@@ -31,6 +32,7 @@ public static class Program
         RunIteratorPatternDemo();
         RunCommandPatternDemo();
         RunTemplateMethodPatternDemo();
+        RunObserverPatternDemo();
     }
 
     private static void RunMementoPatternDemo()
@@ -368,5 +370,42 @@ public static class Program
         maker.Prepare();
         
         Console.WriteLine("\nAll beverages use the same preparation template with different strategies!");
+    }
+
+    private static void RunObserverPatternDemo()
+    {
+        Console.WriteLine("=== Observer Pattern Demo ===\n");
+
+        // Create the subject (data source)
+        var dataSource = new DataSource();
+
+        // Create observers
+        var barChart = new BarChart();
+        var sheet = new Sheet();
+
+        // Subscribe observers to the subject
+        dataSource.Subscribe(barChart);
+        dataSource.Subscribe(sheet);
+
+        Console.WriteLine("\n--- Setting initial values ---");
+        dataSource.SetValues([10, 20, 30]);
+
+        Console.WriteLine("\n--- Updating values ---");
+        dataSource.SetValues([15, 25, 35, 45]);
+
+        Console.WriteLine("\n--- Adding a new observer ---");
+        var anotherSheet = new Sheet();
+        dataSource.Subscribe(anotherSheet);
+
+        Console.WriteLine("\n--- Setting new values (all 3 observers notified) ---");
+        dataSource.SetValues([5, 10, 15, 20, 25]);
+
+        Console.WriteLine("\n--- Unsubscribing an observer ---");
+        dataSource.Unsubscribe(barChart);
+
+        Console.WriteLine("\n--- Final update (only sheets notified) ---");
+        dataSource.SetValues([100, 200]);
+
+        Console.WriteLine($"\nFinal totals - Sheet 1: {sheet.GetTotal()}, Sheet 2: {anotherSheet.GetTotal()}");
     }
 }

@@ -38,7 +38,7 @@ public class Sheet: IObserver
     /// Retrieves the current total value stored in the sheet.
     /// </summary>
     /// <returns>The current total value.</returns>
-    private int GetTotal() => _total;
+    public int GetTotal() => _total;
     
     /// <inheritdoc />
     public void Update(List<int> values)
