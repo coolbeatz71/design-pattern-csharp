@@ -30,11 +30,6 @@ public class DataSource: ISubject
     private readonly List<IObserver> _observers = [];
     
     /// <summary>
-    /// Gets the current list of integer values.
-    /// </summary>
-    private List<int> GetValues() => [.._values];
-    
-    /// <summary>
     /// Sets new values and notifies all observers of this change.
     /// </summary>
     /// <param name="values">New list of integer values.</param>
@@ -88,11 +83,10 @@ public class DataSource: ISubject
     /// </remarks>
     public void NotifyObservers()
     {
-        var values = GetValues();
         Console.WriteLine($"Notifying {_observers.Count} observer(s)...");
         foreach (var observer in _observers)
         {
-            observer.Update(values);
+            observer.Update(_values);
         }
     }
 }
